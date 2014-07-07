@@ -15,7 +15,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
 @Entity
-@Table(name = "stock_detail", catalog = "mkyongdb")
+@Table(name = "stock_detail", catalog = "mkyong")
 public class StockDetail implements java.io.Serializable {
 
 	private Integer stockId;
