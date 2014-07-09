@@ -15,8 +15,8 @@ public class App {
 		session.beginTransaction();
 
 		Stock stock = new Stock();
-        stock.setStockCode("7052");
-        stock.setStockName("PADINI");
+        stock.setStockCode("70521");
+        stock.setStockName("PADINI3");
  
         Category category1 = new Category("CONSUMER", "CONSUMER COMPANY");
         //new category, need save to get the id first

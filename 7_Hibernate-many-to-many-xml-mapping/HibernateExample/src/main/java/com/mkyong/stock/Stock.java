@@ -3,6 +3,11 @@ package com.mkyong.stock;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+
+import com.mkyong.util.HibernateUtil;
+
 public class Stock implements java.io.Serializable {
 
 	private Integer stockId;
@@ -55,5 +60,23 @@ public class Stock implements java.io.Serializable {
 	public void setCategories(Set<Category> categories) {
 		this.categories = categories;
 	}
+
+    public Stock getUserById(Integer stock_id) {
+        Session session = null;
+        Stock stock = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            stock = (Stock) session.get(Stock.class,
+                    stock_id);
+            Hibernate.initialize(stock);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return stock;
+    }
 
 }

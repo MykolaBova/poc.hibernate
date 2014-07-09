@@ -15,8 +15,8 @@ public class App {
 		session.beginTransaction();
 
 		Stock stock = new Stock();
-        stock.setStockCode("7052");
-        stock.setStockName("PADINI");
+        stock.setStockCode("70520");
+        stock.setStockName("PADINI8");
  
         Category category1 = new Category("CONSUMER", "CONSUMER COMPANY");
         Category category2 = new Category("INVESTMENT", "INVESTMENT COMPANY");

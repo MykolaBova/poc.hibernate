@@ -1,7 +1,7 @@
 package com.mkyong.util;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.cfg.AnnotationConfiguration;
 
 public class HibernateUtil {
 
@@ -10,10 +10,11 @@ public class HibernateUtil {
 	private static SessionFactory buildSessionFactory() {
 		try {
 			//For XML mapping
-			//return new Configuration().configure().buildSessionFactory();
+			//
+			return new AnnotationConfiguration().configure().buildSessionFactory();
 			
 			//For Annotation
-			return new Configuration().configure().buildSessionFactory();
+			//return new Configuration().configure().buildSessionFactory();
 			
 		} catch (Throwable ex) {
 			
